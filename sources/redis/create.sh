@@ -1,0 +1,1 @@
+databricks connections create --json @config.json -p e2_staging
