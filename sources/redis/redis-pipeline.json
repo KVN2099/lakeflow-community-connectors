@@ -1,0 +1,25 @@
+{
+    "name": "redis-ingestion-pipeline",
+    "channel": "PREVIEW",
+    "edition": "PRO",
+    "continuous": true,
+    "ingestion_definition": {
+      "connection_name": "my-redis-conn",
+      "objects": [
+        {
+          "table": {
+            "source_schema": "0", 
+            "source_table": "*",
+            "destination_catalog": "main",
+            "destination_schema": "default",
+            "destination_table": "redis_data_raw"
+          },
+          "options": {
+            "key_pattern": "*",
+            "batch_size": "1000"
+          }
+        }
+      ]
+    }
+  }
+  

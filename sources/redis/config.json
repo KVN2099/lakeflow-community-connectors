@@ -1,0 +1,14 @@
+{
+    "name": "test-redis-conn",
+    "connection_type": "GENERIC_LAKEFLOW_CONNECT",
+    "options": {
+      "sourceName": "redis",
+      "host": "redis-13327.c282.east-us-mz.azure.cloud.redislabs.com",
+      "port": "13327",
+      "password": "CEw5rWKuUFH3LC58OQBlmRrPvfHltlGJ",
+      "db": "lakeflow-connector",
+      "ssl": "false",
+      "externalOptionsAllowList": "key_pattern,batch_size"
+    },
+    "comment": "Redis Lakeflow community connector connection"
+  }

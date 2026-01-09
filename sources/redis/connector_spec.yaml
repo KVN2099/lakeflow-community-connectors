@@ -1,0 +1,56 @@
+# Redis Community Connector Spec
+# This file defines the specification for the connector including
+# connection parameters and allowlist options.
+
+# ============================================================================
+# Connection Parameters
+# These are provided when creating the Unity Catalog connection.
+# ============================================================================
+connection:
+  parameters:
+    - name: host
+      type: string
+      required: true
+      description: >
+        Redis server hostname or IP address. For example: 'localhost',
+        '192.168.1.100', or 'redis.example.com'.
+
+    - name: port
+      type: string
+      required: false
+      default: "6379"
+      description: >
+        Redis server port number. Default is 6379, the standard Redis port.
+
+    - name: password
+      type: string
+      required: false
+      description: >
+        Password for Redis authentication (AUTH command). Leave empty if
+        your Redis server does not require authentication. This should be
+        stored securely and never shared publicly.
+
+    - name: db
+      type: string
+      required: false
+      default: "0"
+      description: >
+        Redis database number (0-15). Redis supports 16 logical databases
+        by default. Use different database numbers to logically separate data.
+
+    - name: ssl
+      type: string
+      required: false
+      default: "false"
+      description: >
+        Whether to use SSL/TLS encryption for the connection. Set to 'true'
+        for secure connections, especially when connecting over public networks.
+
+# ============================================================================
+# External Options Allowlist
+# These table-specific options must be included in the externalOptionsAllowList
+# parameter of the UC connection to allow them to be passed through.
+# Use a comma-separated string of option names.
+# ============================================================================
+external_options_allowlist: "key_pattern,batch_size"
+
